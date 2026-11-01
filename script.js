@@ -402,17 +402,31 @@ const screens = [
                 </div>
             </div>
 
+            
+            
             <details class="sources">
-                <summary>Research notes & sources</summary>
-                <p>This prototype includes conceptual analysis, not yet a completed scholarly literature review. Add verified academic sources and game references before submission. See the editable <code>research</code> content in <code>script.js</code>.</p>
-                <p>Game referenced: Nintendo, <em>Tomodachi Life</em> (2013 Japan / 2014 international). This is an unofficial student project.</p>
+                <summary>Bibliography & Game Credits</summary>
+
+                <p>Banks, Jaime. “Object, Me, Symbiote, Other: A Social Typology of Player-Avatar Relationships.” <em>First Monday</em> 20, no. 2 (2015).</p>
+
+                <p>Isbister, Katherine. <em>How Games Move Us: Emotion by Design</em>. MIT Press, 2016.</p>
+
+                <p>Mateas, Michael. “A Preliminary Poetics for Interactive Drama and Games.” <em>Digital Creativity</em> 12, no. 3 (2001): 140–52.</p>
+
+                <p>Salen Tekinbas, Katie, and Eric Zimmerman. <em>Rules of Play: Game Design Fundamentals</em>. MIT Press, 2003.</p>
+
+                <p>Nintendo. <em>Tomodachi Life</em>. Nintendo 3DS, 2013 (Japan); 2014 (international).</p>
+
+                
             </details>
+
+
         `);
     }
 ];
 
 // Research case files
-// Add verified academic sources before submitting.
+
 
 
 
