@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>I Didn't Choose You. The Game Did.</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Main website container -->
+    <div class="shell">
+
+        <!-- Header -->
+        <header class="topbar">
+
+            <div class="brand">
+                <span class="brand-icon">♥</span>
+                SALMONN ISLAND
+            </div>
+
+            <div class="topright">
+                <span id="chapter">PROLOGUE</span>
+
+                <button id="soundToggle"
+                        class="tiny"
+                        aria-label="Toggle sound"
+                        aria-pressed="false">
+                    SOUND OFF
+                </button>
+            </div>
+
+        </header>
+
+        <!-- Progress bar -->
+        <div class="progress">
+            <div id="progressFill"></div>
+        </div>
+
+        <!-- Main story content -->
+        <main id="app" aria-live="polite"></main>
+
+        <!-- Footer -->
+        <footer class="footer">
+
+            <span>AN INTERACTIVE GAME CULTURE STUDY</span>
+
+            <span>MADE WITH LOVE & TOMODACHI LIFE</span>
+
+        </footer>
+
+    </div>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop preload="none">
+    <source src="audio/bgm1.m4a" type="audio/mp4">
+</audio>
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,733 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap');
+/* 1. Colours and basic settings */
+:root {
+    --ink: #25283b;
+    --muted: #77788c;
+    --pink: #ff729c;
+    --yellow: #ffe7a8;
+    --blue: #b9e6f5;
+    --paper: #fffdf8;
+    --border: #292b3d;
+    --shadow: 5px 5px 0 var(--border);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+
+    background: #FFBF00;
+
+    min-height: 100vh;
+}
+/* 2. Page layout, header and footer */
+.shell {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 22px 24px;
+}
+
+.topbar, .footer, .topright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.topbar, .footer, .mono, .eyebrow, .chip, .btn, .tiny, .progress, .status {
+    font-family: 'DM Mono', monospace;
+}
+
+.topbar {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .05em;
+}
+
+.brand-icon {
+    color: var(--pink);
+    font-size: 23px;
+    vertical-align: middle;
+}
+
+.topright {
+    color: var(--muted);
+}
+
+.tiny {
+    border: 1.5px solid var(--ink);
+    background: #fff;
+    padding: 7px 9px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.progress {
+    height: 8px;
+    border: 2px solid var(--ink);
+    background: white;
+    margin: 16px 0 22px;
+}
+
+.progress > div {
+    height: 100%;
+    background: var(--pink);
+    width: 0;
+    transition: width .45s;
+}
+
+main {
+    min-height: 610px;
+}
+
+.panel {
+    border: 2px solid var(--border);
+    background: var(--paper);
+    box-shadow: var(--shadow);
+    border-radius: 8px;
+    padding: clamp(22px, 5vw, 52px);
+    animation: appear .3s ease;
+}
+
+.footer {
+    font-size: 10px;
+    color: var(--muted);
+    margin: 22px 0;
+    flex-wrap: wrap;
+}
+
+/* 3. Text */
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #a25b76;
+    margin: 0 0 14px;
+}
+
+h1 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: clamp(42px, 8vw, 76px);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    margin: 0 0 24px;
+
+    color: var(--ink);
+    text-shadow: none;
+}
+
+h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: clamp(28px, 4.5vw, 48px);
+    font-weight: 600;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    margin: 0 0 17px;
+}
+
+h3 {
+    font-size: 22px;
+    letter-spacing: -.035em;
+    margin: 0 0 10px;
+}
+
+p {
+    line-height: 1.65;
+    font-size: 16px;
+    max-width: 680px;
+}
+
+p.lead {
+    font-size: 19px;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+.pink {
+    color: #f05a8d;
+}
+
+.note {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 16px;
+}
+
+.mini {
+    font: 12px 'DM Mono';
+    color: var(--muted);
+}
+
+/* 4. Buttons and common layout */
+.row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid var(--ink);
+    background: var(--pink);
+    color: #231d2a;
+    padding: 14px 20px;
+    min-height: 49px;
+    box-shadow: 3px 3px 0 var(--ink);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    transition: transform .15s, box-shadow .15s;
+}
+
+.btn:hover, .btn:focus-visible {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 var(--ink);
+}
+
+.btn.secondary {
+    background: white;
+}
+
+.btn.blue {
+    background: var(--blue);
+}
+
+.btn.yellow {
+    background: var(--yellow);
+}
+
+.btn:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+    transform: none;
+    box-shadow: 3px 3px 0 var(--ink);
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 26px;
+}
+
+/* 5. Welcome screen and island illustration */
+.stage {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 32px;
+    align-items: center;
+}
+
+.island {
+    height: 290px;
+    position: relative;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+}
+
+.island-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.sun {
+    position: absolute;
+    right: 42px;
+    top: 34px;
+    background: #fff2ad;
+    width: 65px;
+    height: 65px;
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+}
+
+.cloud {
+    position: absolute;
+    left: 30px;
+    top: 45px;
+    font-size: 56px;
+    color: white;
+    text-shadow: 2px 2px 0 #8bb8c7;
+}
+
+.ground {
+    position: absolute;
+    bottom: -75px;
+    left: 10%;
+    width: 80%;
+    height: 200px;
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    background: #a6d5a5;
+}
+
+.building {
+    position: absolute;
+    bottom: 66px;
+    left: 35%;
+    height: 125px;
+    width: 100px;
+    border: 2px solid var(--ink);
+    background: #ffe4bb;
+    box-shadow: inset 0 20px 0 #f7bd9f;
+}
+
+.building:before {
+    content: '▦  ▦';
+    position: absolute;
+    left: 20px;
+    top: 48px;
+    font-size: 23px;
+}
+
+.heart-float {
+    position: absolute;
+    top: -25px;
+    right: 15px;
+    left: auto;
+
+    font-size: 90px;
+    color: #f05a8d;
+
+    z-index: 2;
+    animation: bob 2.4s ease-in-out infinite;
+}
+/* 6. Character cards and faces */
+.characters {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 24px 0;
+}
+
+.character {
+    background: #fff;
+    border: 2px solid var(--ink);
+    padding: 16px 10px;
+    text-align: center;
+    border-radius: 7px;
+}
+
+.character.focus {
+    background: #FFD6E2;
+    box-shadow: 3px 3px 0 var(--ink);
+}
+
+.avatar {
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar img {
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+.face {
+    position: relative;
+    width: 82px;
+    height: 91px;
+    border: 2px solid var(--ink);
+    border-radius: 44% 44% 48% 48%;
+    background: #f6d4b8;
+    box-shadow: 0 8px 0 -2px #f1c2a1;
+}
+
+.face:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 78px;
+    height: 35px;
+    background: var(--hair, #3a2931);
+    border: 2px solid var(--ink);
+    border-radius: 70% 60% 25% 18%;
+    transform: rotate(-4deg);
+}
+
+.face .eyes {
+    position: absolute;
+    top: 40px;
+    left: 17px;
+    font-size: 15px;
+    letter-spacing: 16px;
+    white-space: nowrap;
+}
+
+.face .mouth {
+    position: absolute;
+    top: 62px;
+    left: 34px;
+    font-size: 15px;
+}
+
+.avatar.you .face {
+    --hair: #322d39;
+}
+
+.avatar.crush .face {
+    --hair: #262a36;
+}
+
+.avatar.jake .face {
+    --hair: #9b624c;
+}
+
+.character .name {
+    font-weight: 800;
+    letter-spacing: .04em;
+    font-size: 15px;
+}
+
+.character .role {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+/* 7. Dialogue, choices and story events */
+.dialogue {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    color: #fc6e09;
+    border-radius: 22px;
+
+    border: 2px solid var(--ink);
+    background: #fff;
+    padding: 19px 22px;
+    margin: 20px 0;
+    position: relative;
+}
+
+.dialogue:before {
+    content: 'DIALOGUE';
+    position: absolute;
+    top: -11px;
+    left: 13px;
+    background: var(--yellow);
+    padding: 3px 8px;
+    border: 1px solid var(--ink);
+    font: 10px 'DM Mono';
+}
+
+.status {
+    display: inline-block;
+    border: 2px solid var(--ink);
+    padding: 8px 13px;
+    background: var(--yellow);
+    font-size: 12px;
+}
+
+.attempts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 18px 0;
+}
+
+.attempts .btn {
+    min-height: 75px;
+}
+
+.notification {
+    border: 2px solid var(--ink);
+    background: #fff0f4;
+    padding: 32px 24px;
+    text-align: center;
+    max-width: 570px;
+    margin: 28px auto;
+    box-shadow: 5px 5px 0 var(--ink);
+}
+
+/* Special love notification title */
+
+.love-title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: clamp(42px, 6vw, 70px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+
+    color: #25283b;
+    text-align: center;
+
+    animation: lovePop 0.6s ease-out;
+}
+
+.love-title span {
+    color: #ff5c91;
+
+    -webkit-text-stroke: 0;
+
+    text-shadow:
+        2px 0 white,
+        -2px 0 white,
+        0 2px white,
+        0 -2px white,
+        2px 2px white,
+        -2px -2px white,
+        -2px 2px white,
+        2px -2px white,
+        4px 5px 0 #ffcf59;
+}
+
+.notification .heart {
+    font-size: 100px;
+    color: #ff4055;
+    display: block;
+
+    text-shadow: 4px 5px 0 #ffb3c1;
+
+    animation: beat 1.2s infinite;
+}
+
+.choices {
+    display: grid;
+    gap: 12px;
+    margin: 22px 0;
+    max-width: 680px;
+}
+
+.choices .btn {
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.5;
+    
+}
+
+.quote {
+    border-left: 5px solid var(--pink);
+    padding: 8px 20px;
+    margin: 28px 0;
+    font-size: clamp(21px, 3vw, 30px);
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -.04em;
+}
+
+.case {
+    background: #f5f4f1;
+    border: 2px solid var(--ink);
+    padding: 24px;
+    margin: 24px 0;
+}
+
+.case p {
+    margin: 0 0 14px;
+}
+
+.case p:last-child {
+    margin-bottom: 0;
+}
+
+/* 8. Research files and final reflection */
+.files {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+    margin: 24px 0;
+}
+
+.file {
+    border: 2px solid var(--ink);
+    background: white;
+    padding: 18px;
+    cursor: pointer;
+    text-align: left;
+    min-height: 155px;
+    transition: background .15s;
+}
+
+.file:hover, .file.active {
+    background: var(--yellow);
+}
+
+.file .num {
+    font: 12px 'DM Mono';
+    color: #b45d7b;
+}
+
+.file strong {
+    display: block;
+    font-size: 20px;
+    margin: 14px 0 8px;
+}
+
+.file small {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.research {
+    border: 2px solid var(--ink);
+    background: #fff;
+    padding: 25px;
+    margin-top: 14px;
+}
+
+.research p {
+    font-size: 15px;
+}
+
+.citation {
+    font-size: 12px;
+    color: #666a7d;
+    border-top: 1px solid #ddd;
+    padding-top: 12px;
+}
+
+.end {
+    text-align: center;
+}
+
+.end .bigheart {
+    font-size: 76px;
+    display: block;
+    margin: 20px;
+}
+
+.end p {
+    margin: 15px auto;
+}
+
+.sources {
+    font-size: 13px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.sources a {
+    color: #b5406d;
+}
+
+/* 9. Animation */
+.fade {
+    animation: appear .4s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+.romance-choice {
+    font-size: 16px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes lovePop {
+    0% {
+        opacity: 0;
+        transform: scale(0.7) rotate(-3deg);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.06) rotate(1deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes bob {
+    50% {
+        transform: translateY(-14px);
+    }
+}
+
+@keyframes beat {
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+/* 10. Mobile screens */
+@media (max-width: 650px) {
+    .shell {
+        padding: 15px;
+    }
+
+    .stage {
+        grid-template-columns: 1fr;
+    }
+
+    .island {
+        height: 220px;
+    }
+
+    .characters {
+        gap: 7px;
+    }
+
+    .character {
+        padding: 10px 3px;
+    }
+
+   .avatar {
+    height: 120px;
+    transform: none;
+    }
+
+    .character .name {
+        font-size: 12px;
+    }
+
+    .character .role {
+        font-size: 10px;
+    }
+
+    .attempts, .files {
+        grid-template-columns: 1fr;
+    }
+
+    .attempts .btn {
+        min-height: 48px;
+    }
+
+    .panel {
+        padding: 23px 18px;
+    }
+
+    .footer {
+        font-size: 9px;
+    }
+}
